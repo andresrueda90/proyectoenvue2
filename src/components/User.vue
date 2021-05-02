@@ -64,7 +64,7 @@
         
       console.log("compoentente montued user")
       setTimeout(() => {
-         this.$store.commit('increment')
+         this.$store.commit('user/increment')
       }, 5000);
     },
 
@@ -84,6 +84,7 @@
             justify-content: center;
             flex-direction: column;
             text-decoration:none;
+            list-style: none;
     }
 
      li{

@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="image header" src="./assets/header.jpg"  >
       <Menu/>
-        <div class="text-center" v-show="$store.state.mostrarLoader">
+        <div class="text-center" v-show="$store.state.general.mostrarLoader">
             <b-spinner variant="secondary" label="Text Centered Large Spinner" style="width: 3rem; height: 3rem;" ></b-spinner>
         </div>
       <router-view />

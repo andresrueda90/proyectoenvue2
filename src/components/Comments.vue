@@ -4,9 +4,9 @@
             alt=""
             class="mb-3 card-imagen"
         >
-        <h3>{{ $store.state.posts[$route.params.id].title  }} #  {{$route.params.id}}</h3>
+        <h3>{{ $store.state.listpost.posts[$route.params.id].title  }} #  {{$route.params.id}}</h3>
         <br>
-        <div v-show="!$store.state.mostrarLoader">
+        <div v-show="!$store.state.general.mostrarLoader">
             <div class="accordion" role="tablist" v-for="(comment,index) in comments" :key="index">
                 <b-card no-body class="mb-1">
                 <b-card-header header-tag="header" class="p-1" role="tab">
@@ -39,12 +39,12 @@
         },
         computed:{
             comments(){
-                return  this.$store.state.comments;
+                return  this.$store.state.comentarios.comments;
             }
         },
 
         created(){
-            this.$store.dispatch('getComments', {
+            this.$store.dispatch('comentarios/getComments', {
                 idComments: this.$route.params.id
             })
 

@@ -2,7 +2,7 @@
     <div>
     <h1>Publicaciones</h1><br>
     <b-card-group deck>
-        <div v-for="(post,index) in $store.state.posts" :key="index">
+        <div v-for="(post,index) in $store.state.listpost.posts" :key="index">
             <b-card
                 :title="post.title"
                 tag="article"
@@ -52,7 +52,7 @@
     },
 
     mounted (){
-        this.$store.dispatch('getPosts')
+        this.$store.dispatch('listpost/getPosts')
     }
   }
 </script>
