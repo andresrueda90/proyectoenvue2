@@ -13,7 +13,7 @@
                 <b-input-group class="pl-5 pr-5">
                 <b-form-input type="text" v-model="newUser.name" placeholder="nombre"></b-form-input>
                 <b-form-input type="text" v-model="newUser.last" placeholder="apellido"></b-form-input>
-                <b-button block  variant="light" type="submit">Agregar</b-button></b-input-group>
+                <b-button block  variant="dark" type="submit">Agregar</b-button></b-input-group>
             </form>
     </div>
 </template>
@@ -30,7 +30,7 @@
                     contated:false
                 },
                 {
-                    name:"sebas",
+                    name:"felipe",
                     last:"Rueda",
                     contated:true
                 },

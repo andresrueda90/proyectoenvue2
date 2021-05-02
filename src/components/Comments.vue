@@ -1,19 +1,24 @@
 <template>
     <div>
-        <h1>{{ $route.params.id }}</h1>
-
-        <div class="accordion" role="tablist" v-for="(comment,index) in comments" :key="index">
-            <b-card no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-                <b-button block v-b-toggle="'accordion-' + comment.id" variant="info" class="p-1 button-comment">Commentario {{index+1}}  </b-button>
-            </b-card-header>
-            <b-collapse :id="comentaTex+comment.id" visible accordion="my-accordion" role="tabpanel">
-                <b-card-body class="body-comment">
-                <b-card-text>{{ comment.body }} <br> Autor: {{comment.email}} </b-card-text>
-                </b-card-body>
-            </b-collapse>
-            </b-card>
-
+        <img :src="rutaImgCard2($route.params.id)" 
+            alt=""
+            class="mb-3 card-imagen"
+        >
+        <h3>{{ $store.state.posts[$route.params.id].title  }} #  {{$route.params.id}}</h3>
+        <br>
+        <div v-show="!$store.state.mostrarLoader">
+            <div class="accordion" role="tablist" v-for="(comment,index) in comments" :key="index">
+                <b-card no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                    <b-button block v-b-toggle="'accordion-' + comment.id" variant="info" class="p-1 button-comment">Autor: {{comment.email}} </b-button>
+                </b-card-header>
+                <b-collapse :id="comentaTex+comment.id" visible accordion="my-accordion" role="tabpanel">
+                    <b-card-body class="body-comment">
+                    <b-card-text>{{ comment.body }} </b-card-text>
+                    </b-card-body>
+                </b-collapse>
+                </b-card>
+            </div>
         </div>
     </div>
 </template>
@@ -24,11 +29,13 @@
 
         data() {
             return {
-                  comentaTex:"accordion-"   
+                  comentaTex:"accordion-",
             }
         },
         methods: {
-
+            rutaImgCard2(index){
+                return  "https://picsum.photos/300/200/?image=" + index  ;
+            },
         },
         computed:{
             comments(){
@@ -36,10 +43,15 @@
             }
         },
 
-        mounted (){
+        created(){
             this.$store.dispatch('getComments', {
                 idComments: this.$route.params.id
             })
+
+        },
+
+        mounted(){
+          
         }
     }
 
@@ -56,6 +68,10 @@
 .button-comment{
    background: rgb(29,23,33);
 background: linear-gradient(90deg, rgba(29,23,33,1) 0%, rgba(32,22,40,1) 35%, rgba(29,23,33,1) 100%);
+}
+
+.card-imagen{
+    border-radius: 15px;
 }
 
 </style>

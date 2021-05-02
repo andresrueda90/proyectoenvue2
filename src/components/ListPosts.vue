@@ -1,5 +1,6 @@
 <template>
     <div>
+    <h1>Publicaciones</h1><br>
     <b-card-group deck>
         <div v-for="(post,index) in $store.state.posts" :key="index">
             <b-card
@@ -11,7 +12,7 @@
             >
                 <img :src="rutaImgCard2(index)" 
                 alt=""
-                class="mb-3"
+                class="mb-3 card-imagen"
                 >
                 <b-card-text>
                     {{post.body.substring(0,80) + "..."}}
@@ -67,6 +68,10 @@
     -moz-box-shadow: -1px -1px 14px -3px rgba(245,242,245,1);
     box-shadow: -1px -1px 14px -3px rgba(245,242,245,1);
     background-color: #16101A;
+}
+
+.card-imagen{
+    border-radius: 15px;
 }
 
 </style>
