@@ -4,8 +4,10 @@
         <h3> 👌 {{ titlepersonalizado }}</h3>
         <h3> ✌ {{ contatenarNombre }}</h3>
         <hr>
-        <input type="text" v-model="msjInput" >
-        <button @click="mostarAlerta(msjInput)">Mostrar mensaje</button>
+        <b-input-group class="pl-5 pr-5">
+            <b-form-input type="text" v-model="msjInput" placeholder="Escribir mensaje para Alerta"></b-form-input>
+            <b-button variant="dark" @click="mostarAlerta(msjInput)">Mostrar mensaje</b-button>
+        </b-input-group>
 
     </div>
     
@@ -34,6 +36,7 @@ export default {
     methods:{
         mostarAlerta(parametro){
             alert(parametro);
+            this.msjInput="";
         }
     },
 
