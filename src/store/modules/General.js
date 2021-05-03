@@ -2,7 +2,7 @@
 export default {
     namespaced: true,
 	state:{
-		level:"Este texto viene del Store",
+		level:"Este texto viene desde Store",
 		mostrarLoader:false
 	}, 
 	getters:{

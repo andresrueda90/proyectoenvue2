@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h2>Data componente {{ msg1 }}</h2>
-        <h3> {{ titlepersonalizado }}</h3>
-        <h3> {{ contatenarNombre }}</h3>
+        <h3> 👉 {{ msg1 }}</h3>
+        <h3> 👌 {{ titlepersonalizado }}</h3>
+        <h3> ✌ {{ contatenarNombre }}</h3>
         <hr>
         <input type="text" v-model="msjInput" >
         <button @click="mostarAlerta(msjInput)">Mostrar mensaje</button>
@@ -18,8 +18,8 @@ export default {
     name: 'DataComponente',
     data(){
         return{
-            titlepersonalizado:"Esto es un valor ramdom",
-            variableComputada:"Esto es una variable computada",
+            titlepersonalizado:" Esto es un valor ramdom",
+            variableComputada:" Esto es una variable computada",
             msjInput:""
         }
     },
@@ -28,7 +28,6 @@ export default {
         msg1: {
             type: String,
             default:"mensaje por defecto",
-            required:true,
         }
     },
 
@@ -40,7 +39,7 @@ export default {
 
     computed:{
         contatenarNombre(){
-            return  " NOMBRE DE COMPONENTE:" + this.variableComputada ;
+            return  " Computada: " + this.variableComputada ;
         }
     }
 

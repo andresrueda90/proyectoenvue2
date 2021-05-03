@@ -6,6 +6,10 @@ Vue.use(Router)
 
 const routes = [
     {
+        path: '*',
+        component: () => import('../components/404.vue'),
+    },
+    {
         path: '/',
         component: () => import('../components/HelloWorld.vue'),
     },
@@ -29,6 +33,8 @@ const routes = [
 ];
 
 export default new Router({
+    mode: 'history',
 	routes,
 	strict: process.env.NODE_ENV !== 'production',
+
 })

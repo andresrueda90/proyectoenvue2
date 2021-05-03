@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <h1>Hola Mundo {{ $store.state.general.level }}</h1>
+        <h2> 🤞 Hola Mundo {{ $store.state.general.level }}</h2>
         <DataComponente msg1="Mensaje desde el componente padre"/>
     </div>
 </template>

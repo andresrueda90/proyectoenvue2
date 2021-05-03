@@ -1,11 +1,16 @@
 <template>
     <div>
-            <h3>MODULO USUARIOS</h3>
+            <h3> Registro Usuarios</h3>
             <hr>
             <h1>{{lengthArrayUsers }}</h1>
             <ul>
                 <li v-for="(user, index) in users" :key="index">
-                    {{ user.name }}-{{ user.last }} <b-button variant="danger" @click="deleteUser(index)">X</b-button>
+                    {{ user.name }}-{{ user.last }} 
+
+                    <b-button variant="danger" 
+                    @click="deleteUser(index)"
+                    >X</b-button>
+                    
                 </li>
             </ul>
 

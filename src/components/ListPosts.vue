@@ -17,6 +17,7 @@
                 <b-card-text>
                     {{post.body.substring(0,80) + "..."}}
                 </b-card-text>
+                
                 <b-button variant="primary">                
                     <router-link 
                     :to="armarUrlComments(index)"

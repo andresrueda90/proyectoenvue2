@@ -6,20 +6,33 @@
         >
         <h3>{{ $store.state.listpost.posts[$route.params.id].title  }} #  {{$route.params.id}}</h3>
         <br>
+
         <div v-show="!$store.state.general.mostrarLoader">
-            <div class="accordion" role="tablist" v-for="(comment,index) in comments" :key="index">
+            <div class="accordion" role="tablist" 
+            v-for="(comment,index) in comments" 
+            :key="index">
                 <b-card no-body class="mb-1">
-                <b-card-header header-tag="header" class="p-1" role="tab">
-                    <b-button block v-b-toggle="'accordion-' + comment.id" variant="info" class="p-1 button-comment">Autor: {{comment.email}} </b-button>
-                </b-card-header>
-                <b-collapse :id="comentaTex+comment.id" visible accordion="my-accordion" role="tabpanel">
-                    <b-card-body class="body-comment">
-                    <b-card-text>{{ comment.body }} </b-card-text>
-                    </b-card-body>
-                </b-collapse>
+                    <b-card-header header-tag="header" 
+                    class="p-1" 
+                    role="tab"
+                    >
+                        <b-button block v-b-toggle="'accordion-' + comment.id" 
+                        variant="info" 
+                        class="p-1 button-comment"
+                        >Autor: {{comment.email}} </b-button>
+                    </b-card-header>
+
+                    <b-collapse :id="comentaTex+comment.id" 
+                    visible accordion="my-accordion" 
+                    role="tabpanel">
+                        <b-card-body class="body-comment">
+                            <b-card-text>{{ comment.body }} </b-card-text>
+                        </b-card-body>
+                    </b-collapse>
                 </b-card>
             </div>
         </div>
+
     </div>
 </template>
 
