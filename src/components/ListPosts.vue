@@ -53,7 +53,9 @@
     },
 
     mounted (){
-        this.$store.dispatch('listpost/getPosts')
+         if(this.$store.state.listpost.posts.length == 0){
+            this.$store.dispatch('listpost/getPosts')
+         }
     }
   }
 </script>

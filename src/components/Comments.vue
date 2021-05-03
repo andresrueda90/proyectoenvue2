@@ -7,7 +7,7 @@
         <h3>{{ $store.state.listpost.posts[$route.params.id].title  }} #  {{$route.params.id}}</h3>
         <br>
 
-        <div v-show="!$store.state.general.mostrarLoader">
+        <div v-show="true">
             <div class="accordion" role="tablist" 
             v-for="(comment,index) in comments" 
             :key="index">
@@ -49,6 +49,12 @@
             rutaImgCard2(index){
                 return  "https://picsum.photos/300/200/?image=" + index  ;
             },
+
+            recargarListPost(){
+                if(this.$store.state.listpost.posts.length == 0){
+                    this.$router.push("/list-post"); //redirecciona si se ha consultado la lista de post
+                }
+            }
         },
         computed:{
             comments(){
@@ -57,9 +63,13 @@
         },
 
         created(){
+            this.$store.state.comentarios.comments=[];
+            
             this.$store.dispatch('comentarios/getComments', {
                 idComments: this.$route.params.id
             })
+
+            this.recargarListPost();
 
         },
 
