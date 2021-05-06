@@ -1,13 +1,20 @@
 <template>
   <div class="hello">
     <h3>🏠{{ msg }}</h3>
-
+    <br>
+    <NasaBirthDay/>
   </div>
 </template>
 
 <script>
+import NasaBirthDay from "./NasaBirthDay.vue";
+
 export default {
+
   name: 'HelloWorld',
+  components:{
+    NasaBirthDay
+  },
   data(){
       return{
           msg:"Esta es la página de inicio"

@@ -68,9 +68,6 @@
     mounted(){
         
       console.log("compoentente montued user")
-      setTimeout(() => {
-         this.$store.commit('user/increment')
-      }, 5000);
     },
 
     created(){

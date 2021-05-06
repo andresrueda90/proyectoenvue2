@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/helloword">Hola Mundo</router-link></li>
+            <li><router-link :to="{name:'hola-mundo'}">Hola Mundo</router-link></li>
             <li><router-link to="/user">User</router-link></li>
             <li><router-link to="/list-post">Listado Post</router-link></li>
         </ul>

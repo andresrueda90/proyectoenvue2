@@ -15,6 +15,7 @@ const routes = [
     },
     {
         path: '/helloword',
+        name: 'hola-mundo',
         component: () => import('../components/HolaComponente.vue'),
     },
     {
