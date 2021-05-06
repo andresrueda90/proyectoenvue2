@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiPost } from '@/data/variablesGlobales' 
 
 export default {
     namespaced: true,
@@ -17,7 +18,7 @@ export default {
 	actions:{
 		getPosts({ commit }) {
 			commit('general/setMostrarLoader', true, { root: true });
-			axios.get('https://jsonplaceholder.typicode.com/posts')
+			axios.get(apiPost.url+'/posts')
 			.then(response => {
 				commit('setPost', response.data);
 				commit('general/setMostrarLoader', false, { root: true });

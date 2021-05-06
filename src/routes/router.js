@@ -30,7 +30,12 @@ const routes = [
     {
         path: '/comments/:id',
         component: () => import('../components/Comments.vue'),
+    },
+    {
+        path: '/superhero/:id',
+        component: () => import('../components/ListSuperHero.vue'),
     }
+
 ];
 
 export default new Router({

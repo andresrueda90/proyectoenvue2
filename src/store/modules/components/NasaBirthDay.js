@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import { apiNasa } from '@/data/variablesGlobales' 
 
 export default {
     namespaced: true,
@@ -20,7 +21,7 @@ export default {
 		getNasaPhoto({ commit },param) {
 			commit('general/setMostrarLoader', true, { root: true });
 
-			let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+param.fecha;
+			let url = apiNasa.url+"?api_key=DEMO_KEY&date="+param.fecha;
 
 				axios.get(url)
 				.then(response => {

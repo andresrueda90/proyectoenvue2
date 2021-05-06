@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiPost } from '@/data/variablesGlobales' 
 
 export default {
     namespaced: true,
@@ -17,7 +18,7 @@ export default {
 		getComments({ commit },param) {
 			commit('general/setMostrarLoader', true, { root: true });
 
-			let url = "https://jsonplaceholder.typicode.com/posts/"+param.idComments+"/comments";
+			let url = apiPost.url+"/posts/"+param.idComments+"/comments";
 			setTimeout(() => {
 				axios.get(url)
 				.then(response => {
