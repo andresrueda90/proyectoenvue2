@@ -4,7 +4,8 @@ import { apiSuperHero } from '@/data/variablesGlobales'
 export default {
     namespaced: true,
 	state:{
-        superHeroData:[]
+        superHeroData:[],
+        superHeroDataSearched:[]
 	}, 
 	getters:{
 		// Here we will create a getter
@@ -13,6 +14,10 @@ export default {
 
         setSuperHerobyId(state, data) {
 			state.superHeroData = data
+		},
+
+        setSuperHerobyName(state, data) {
+			state.superHeroDataSearched = data.results
 		}
 
 
@@ -31,7 +36,23 @@ export default {
                 commit('general/setMostrarLoader', false, { root: true });
             }).catch(error => {
                 commit('general/setMostrarLoader', false, { root: true });
-                console.log(error);
+                console.log(error.messages);
+            })	
+		},
+
+        getSuperHerobyName({ commit },param) {
+			commit('general/setMostrarLoader', true, { root: true });
+
+            let name=param.name
+			let url = apiSuperHero.url+ apiSuperHero.token +"/search/"+name;
+
+            axios.get(url)
+            .then(response => {
+                commit('setSuperHerobyName', response.data);
+                commit('general/setMostrarLoader', false, { root: true });
+            }).catch(error => {
+                commit('general/setMostrarLoader', false, { root: true });
+                console.log(error.messages);
             })	
 		},
 

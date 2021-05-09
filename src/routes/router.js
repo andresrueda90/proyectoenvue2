@@ -34,7 +34,12 @@ const routes = [
     {
         path: '/superhero/:id',
         component: () => import('../components/ListSuperHero.vue'),
+    },
+    {
+        path: '/superhero/',
+        component: () => import('../components/ListSuperHero.vue'),
     }
+
 
 ];
 

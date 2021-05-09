@@ -2,12 +2,12 @@
     <div>
     <h1>Publicaciones</h1><br>
     <b-card-group deck>
-        <div v-for="(post,index) in $store.state.listpost.posts" :key="index">
+        <div v-for="(post,index) in $store.state.listpost.posts" :key="index" class="">
             <b-card
                 :title="post.title"
                 tag="article"
                 style="max-width: 20rem; min-width: 20rem;"
-                class="mb-2 ml-3 post"
+                class="post"
                 
             >
                 <img :src="rutaImgCard2(index)" 
@@ -72,6 +72,8 @@
     box-shadow: -1px -1px 14px -3px rgba(245,242,245,1);
     background-color: #16101A;
 }
+
+
 
 .card-imagen{
     border-radius: 15px;
