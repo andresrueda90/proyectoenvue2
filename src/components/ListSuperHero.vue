@@ -35,7 +35,7 @@
                             style="max-width: 20rem; min-width: 20rem;"
                             class="mb-2 ml-3 post"
                             
-                        >
+                        >  
                             <img :src="superhero.image.url" 
                             alt=""
                             class="mb-3 card-imagen"

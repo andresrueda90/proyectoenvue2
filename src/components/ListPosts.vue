@@ -73,8 +73,6 @@
     background-color: #16101A;
 }
 
-
-
 .card-imagen{
     border-radius: 15px;
 }
